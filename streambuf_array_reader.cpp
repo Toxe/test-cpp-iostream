@@ -1,8 +1,8 @@
 #include <iostream>
 #include <streambuf>
 #include <vector>
-#include <cassert>
 #include <functional>
+#include <cassert>
 
 class array_reader_streambuf : public std::streambuf {
 public:
@@ -27,7 +27,7 @@ array_reader_streambuf::array_reader_streambuf(const char* begin, const char* en
     end_(end),
     current_(begin_)
 {
-    assert(std::less_equal<const char *>()(begin_, end_));
+    assert(std::less_equal<const char*>()(begin_, end_));
 }
 
 array_reader_streambuf::array_reader_streambuf(const char* str) :
@@ -63,7 +63,7 @@ array_reader_streambuf::int_type array_reader_streambuf::pbackfail(int_type ch)
 
 std::streamsize array_reader_streambuf::showmanyc()
 {
-    assert(std::less_equal<const char *>()(current_, end_));
+    assert(std::less_equal<const char*>()(current_, end_));
     return end_ - current_;
 }
 

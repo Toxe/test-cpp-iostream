@@ -21,6 +21,7 @@ private:
     std::vector<char> buffer_;
 };
 
+
 file_reader_streambuf::file_reader_streambuf(FILE* fp, std::size_t buffer_size, std::size_t put_back) :
     fp_(fp),
     put_back_(std::max(put_back, std::size_t(1))),

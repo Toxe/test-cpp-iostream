@@ -4,7 +4,10 @@ project("IOStream" LANGUAGES CXX)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_executable(fstream_simple_write fstream_simple_write.cpp)
+add_executable(streambuf_file_reader streambuf_file_reader.cpp)
 
 target_compile_features(fstream_simple_write PUBLIC cxx_std_17)
+target_compile_features(streambuf_file_reader PUBLIC cxx_std_17)
 
 set_target_properties(fstream_simple_write PROPERTIES CXX_EXTENSIONS OFF)
+set_target_properties(streambuf_file_reader PROPERTIES CXX_EXTENSIONS OFF)

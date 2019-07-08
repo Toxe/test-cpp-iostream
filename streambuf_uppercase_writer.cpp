@@ -18,13 +18,13 @@ streambuf_uppercase_writer::int_type streambuf_uppercase_writer::overflow(int_ty
     if (ch != traits_type::eof()) {
         // convert lowercase to uppercase and write the character to output
         ch = std::toupper(static_cast<char>(ch), getloc());
-        sink_.put(ch);
+        sink_.put(static_cast<char>(ch));
 
         if (sink_.eof())
             return traits_type::eof();
     }
 
-    return traits_type::to_int_type(ch);
+    return traits_type::to_int_type(static_cast<char>(ch));
 }
 
 

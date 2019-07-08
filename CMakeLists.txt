@@ -15,6 +15,12 @@ target_compile_features(streambuf_file_reader PUBLIC cxx_std_17)
 target_compile_features(streambuf_capitalization_writer PUBLIC cxx_std_17)
 target_compile_features(streambuf_uppercase_writer PUBLIC cxx_std_17)
 
+target_compile_options(fstream_simple_write PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
+target_compile_options(streambuf_array_reader PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
+target_compile_options(streambuf_file_reader PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
+target_compile_options(streambuf_capitalization_writer PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
+target_compile_options(streambuf_uppercase_writer PRIVATE -Wall -Wextra -Wmost -pedantic -Wconversion -Wfloat-equal -Wold-style-cast)
+
 set_target_properties(fstream_simple_write PROPERTIES CXX_EXTENSIONS OFF)
 set_target_properties(streambuf_array_reader PROPERTIES CXX_EXTENSIONS OFF)
 set_target_properties(streambuf_file_reader PROPERTIES CXX_EXTENSIONS OFF)

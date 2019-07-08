@@ -49,7 +49,7 @@ std::streambuf::int_type file_reader_streambuf::underflow()
 
     // start is now the start of the buffer, proper.
     // Read from fp_ in to the provided buffer.
-    std::size_t n = std::fread(start, 1, buffer_.size() - (start - base), fp_);
+    std::size_t n = std::fread(start, 1, buffer_.size() - static_cast<size_t>(start - base), fp_);
 
     if (n == 0)
         return traits_type::eof();

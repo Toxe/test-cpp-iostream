@@ -69,7 +69,7 @@ bool capitalization_writer_streambuf::capitalize_and_flush()
     }
 
     std::ptrdiff_t n = pptr() - pbase();
-    pbump(-n);
+    pbump(static_cast<int>(-n));
 
     return bool(sink_.write(pbase(), n));
 }

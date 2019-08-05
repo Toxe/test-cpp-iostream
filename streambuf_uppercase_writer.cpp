@@ -1,3 +1,4 @@
+#include <locale>
 #include <iostream>
 #include <streambuf>
 
